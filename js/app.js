@@ -38,6 +38,7 @@ let locations= {
         }
         let elemnts1 = document.createElement('li');
             listEl.appendChild(elemnts1);
+            sum=0;
             for(i=0;i<14;i++){
                 sum=sum+this.amounts_of_cookies_purchased_for_each_hour[i]
 
@@ -110,6 +111,7 @@ clock=making_clock(6,20);
         }
         let elemnts1 = document.createElement('li');
             listEl.appendChild(elemnts1);
+            sum=0
             for(i=0;i<14;i++){
                 sum=sum+this.amounts_of_cookies_purchased_for_each_hour[i]
 
@@ -160,6 +162,7 @@ let locations2= {
         }
         let elemnts1 = document.createElement('li');
             listEl.appendChild(elemnts1);
+            sum=0
             for(i=0;i<14;i++){
                 sum=sum+this.amounts_of_cookies_purchased_for_each_hour[i]
 
@@ -210,6 +213,7 @@ let locations3= {
         }
         let elemnts1 = document.createElement('li');
             listEl.appendChild(elemnts1);
+            sum=0
             for(i=0;i<14;i++){
                 sum=sum+this.amounts_of_cookies_purchased_for_each_hour[i]
 
@@ -260,6 +264,7 @@ let locations4= {
         }
         let elemnts1 = document.createElement('li');
             listEl.appendChild(elemnts1);
+            sum=0
             for(i=0;i<14;i++){
                 sum=sum+this.amounts_of_cookies_purchased_for_each_hour[i]
 
