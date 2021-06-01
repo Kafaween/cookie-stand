@@ -18,7 +18,8 @@ tr:nth-child(even) {
 
 
 * {box-sizing: border-box;
-background-color: hsl(143, 100%, 51%); }
+background-color: hsl(313, 100%, 25%);
+color: black; }
 body {font-family: Verdana, sans-serif; margin:0}
 .mySlides {display: none;}
 img {vertical-align: middle;
