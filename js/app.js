@@ -3,12 +3,15 @@ let j;
 let x;
 let globVar = document.getElementById('output');
 let table=document.createElement("table");
+table.setAttribute("id", 1)
 globVar.appendChild(table)
 let arrofobj=[];
 let clock =[];
 let sum=0
 var total=0
 var total2ltotal=0
+var gg=0;
+var s
 
  function locationn(name_,max_hourly_customers,min_hourly_customers,average_cookies_per_customer){
 
@@ -116,8 +119,11 @@ clock=making_clock(6,20);
        
  
   function footer(){
+
+    
       
       var tr_f=document.createElement("tr")
+      
       table.appendChild(tr_f)
       var th_f=document.createElement("th")
       tr_f.appendChild(th_f)
@@ -142,6 +148,39 @@ clock=making_clock(6,20);
       tr_f.appendChild(tt)
       tt.textContent=total2ltotal
     }       
+    function footer1(){
+
+        if (s=1){
+            document.getElementById("1").deleteRow(6+gg);
+            gg=gg+1
+        }
+          
+          var tr_f=document.createElement("tr")
+          
+          table.appendChild(tr_f)
+          var th_f=document.createElement("th")
+          tr_f.appendChild(th_f)
+          th_f.textContent="Totals";
+          for (i=0;i<clock.length;i++){
+              var td_f=document.createElement("td")
+              tr_f.appendChild(td_f)
+              for(j=0;j<arrofobj.length;j++){
+                
+                  total=total+(arrofobj[j].amounts_of_cookies_purchased_for_each_hour[i])
+    
+    
+              }
+               total2ltotal=total2ltotal +total
+              td_f.textContent=total
+              total=0
+    
+    
+    
+          }
+          tt=document.createElement("td")
+          tr_f.appendChild(tt)
+          tt.textContent=total2ltotal
+        }       
     
       
 
@@ -168,13 +207,35 @@ clock=making_clock(6,20);
  loc5.random()
  loc5.simulated()
  loc5.render()
+ footer();
  
-  footer();
+  
   
 
+  const cookiesForm = document.getElementById('add_row');
+  s=s+1
 
+ cookiesForm.addEventListener('submit', handleSubmitting);
+ 
 
+function handleSubmitting(event){
+    event.preventDefault();
+    console.log(event)
+    let newloc = (event.target.locField.value);
+    let newmax = parseInt(event.target.maxField.value);
+    let newmin = parseInt(event.target.minField.value);
+    let newavg = parseFloat(event.target.avgField.value);
 
+    let adding=new locationn(newloc,newmax,newmin,newavg)
+    adding.random()
+    adding.simulated()
+    adding.render()
+    
+    footer1();
+    
+    
 
+    
+}
  
  
